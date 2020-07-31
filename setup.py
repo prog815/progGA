@@ -5,7 +5,7 @@ import abscur
 
 setup(
     name='progGA',
-    version='0.0.1',
+    version='0.0.2',
     description='Библиотека генетических алгоритмов',
     packages=find_packages(),
     long_description=open(join(dirname(__file__), 'README.md')).read(),
