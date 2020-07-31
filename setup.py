@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 from os.path import join, dirname
 
 setup(
-    name='progGA',
-    version='0.0.4',
+    name='progga',
+    version='0.0.5',
     description='Библиотека генетических алгоритмов',
     packages=find_packages(),
     long_description=open(join(dirname(__file__), 'README.md')).read(),
