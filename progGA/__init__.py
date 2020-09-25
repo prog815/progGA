@@ -28,11 +28,12 @@ class ListGenetic:
         self._mutate_koef = mutate_koef
         self._quality_method = quality_method
         
-    def fit(self,epochs=10):
+    def fit(self,epochs=10,echo_time=1):
         """
         Запуск генетической оптимизации.
         Аргументы:
             epochs - кол-во эпох оптимизации
+            echo_time - периодичность в секундах вывода лога
         """
         import numpy as np
         
