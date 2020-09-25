@@ -28,14 +28,17 @@ class ListGenetic:
         self._mutate_koef = mutate_koef
         self._quality_method = quality_method
         
-    def fit(self,epochs=10):
+    def fit(self,epochs=10,echo_time=1):
         """
         Запуск генетической оптимизации.
         Аргументы:
             epochs - кол-во эпох оптимизации
+            echo_time - периодичность в секундах вывода лога
         """
         import numpy as np
+        import time
         
+        st_time = time.time()
         for ep in range(epochs):
             # генерация нового
             new = self._new_genom()
@@ -56,7 +59,12 @@ class ListGenetic:
 
             self._hist.append(hist)
 
-            print(len(self._hist),hist_new)
+            # вывод лога
+            new_time = time.time()
+            if new_time - st_time >= echo_time:
+                print(len(self._hist),hist_new)
+                st_time = new_time
+        print("finish - ",len(self._hist),hist_new)
     
     def _new_genom(self):
         import numpy as np
